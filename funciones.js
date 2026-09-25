@@ -16,5 +16,10 @@ function calcularInteresSimple(monto, tasa, plazoAnios){
     let tasaDecimal = tasa / 100;
     let interes = monto * tasaDecimal * plazoAnios;
     return interes;
+}
 
+function calcularTotalPagar(monto, interes){
+    let subtotal = monto + interes;
+    let totalPagar = subtotal + 100;
+    return totalPagar;
 }
