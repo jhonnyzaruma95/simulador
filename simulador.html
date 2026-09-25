@@ -3,103 +3,238 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NovaBank | Simulador de Crédito</title>
+
+    <title>TOPFINANCE | Simulador de Crédito</title>
+
     <link rel="stylesheet" href="simulador.css">
 </head>
 
 <body>
 
+    <!-- =========================================
+         BARRA SUPERIOR
+    ========================================== -->
+
     <header class="topbar">
+
         <div class="brand">
-            <div class="brand-icon">N</div>
-            <div>
-                <strong>NovaBank</strong>
+
+            <div class="brand-logo">
+                <img src="empresa.jpg" alt="TOPFINANCE">
+            </div>
+
+            <div class="brand-text">
+                <strong>TOPFINANCE</strong>
                 <span>Servicios Financieros</span>
             </div>
+
         </div>
 
-        <div class="secure">
-            <span class="secure-dot"></span>
-            Simulador seguro
+        <div class="top-status">
+
+            <span class="status-circle"></span>
+
+            <div>
+                <strong>Simulador seguro</strong>
+                <small>Conexión protegida</small>
+            </div>
+
         </div>
+
     </header>
 
-    <main class="page">
+
+    <!-- =========================================
+         CONTENIDO PRINCIPAL
+    ========================================== -->
+
+    <main class="main-container">
+
+        <!-- ENCABEZADO -->
 
         <section class="hero">
-            <div>
-                <span class="eyebrow">CENTRO FINANCIERO</span>
-                <h1>Simulador de Crédito</h1>
+
+            <div class="hero-content">
+
+                <span class="section-tag">
+                    TOPFINANCE FINANCIAL SERVICES
+                </span>
+
+                <h1>
+                    Simulador
+                    <span>de Crédito</span>
+                </h1>
+
                 <p>
-                    Calcula tu capacidad financiera y consulta las condiciones
-                    estimadas de tu crédito.
+                    Calcula tu capacidad financiera y conoce las condiciones
+                    estimadas de tu crédito de forma rápida y sencilla.
                 </p>
+
             </div>
 
-            <div class="hero-card">
-                <span>ESTADO DEL SERVICIO</span>
-                <strong>Disponible</strong>
-                <small>Simulación en línea</small>
+
+            <div class="service-card">
+
+                <div class="service-icon">
+                    ✓
+                </div>
+
+                <div>
+                    <span>ESTADO DEL SERVICIO</span>
+
+                    <strong>Disponible</strong>
+
+                    <small>
+                        Simulación en línea
+                    </small>
+                </div>
+
             </div>
+
         </section>
 
-        <div class="container">
 
-            <!-- DATOS FINANCIEROS -->
-            <section class="financial-section">
+        <!-- =========================================
+             PANEL PRINCIPAL
+        ========================================== -->
 
-                <div class="section-title">
-                    <div class="section-number">01</div>
+        <div class="credit-panel">
+
+
+            <!-- =====================================
+                 DATOS FINANCIEROS
+            ====================================== -->
+
+            <section class="panel-section">
+
+                <div class="section-heading">
+
+                    <div class="number">
+                        01
+                    </div>
+
                     <div>
                         <h2>Datos financieros</h2>
-                        <p>Ingresa tu información económica mensual.</p>
+
+                        <p>
+                            Ingresa tu información económica mensual.
+                        </p>
                     </div>
+
                 </div>
+
 
                 <div class="form-grid">
 
-                    <div class="field">
-                        <label for="txtIngresos">Ingresos mensuales</label>
+                    <!-- INGRESOS -->
 
-                        <div class="input-money">
-                            <span>$</span>
+                    <div class="field">
+
+                        <label for="txtIngresos">
+                            <span class="label-icon">$</span>
+                            Ingresos mensuales
+                        </label>
+
+                        <div class="input-container">
+
+                            <div class="input-icon">
+                                $
+                            </div>
+
                             <input
                                 type="text"
                                 id="txtIngresos"
                                 placeholder="0.00"
+                                inputmode="decimal"
+                                autocomplete="off"
                             >
+
+                            <span class="input-suffix">
+                                USD
+                            </span>
+
                         </div>
+
                     </div>
 
-                    <div class="field">
-                        <label for="txtEgresos">Egresos mensuales</label>
 
-                        <div class="input-money">
-                            <span>$</span>
+                    <!-- EGRESOS -->
+
+                    <div class="field">
+
+                        <label for="txtEgresos">
+                            <span class="label-icon">$</span>
+                            Egresos mensuales
+                        </label>
+
+                        <div class="input-container">
+
+                            <div class="input-icon">
+                                $
+                            </div>
+
                             <input
                                 type="text"
                                 id="txtEgresos"
                                 placeholder="0.00"
+                                inputmode="decimal"
+                                autocomplete="off"
                             >
+
+                            <span class="input-suffix">
+                                USD
+                            </span>
+
                         </div>
+
                     </div>
 
                 </div>
 
-                <div class="results-grid">
 
-                    <div class="result-card">
-                        <span class="result-label">Disponible</span>
-                        <p>
-                            $ <span id="spnDisponible"></span>
-                        </p>
+                <!-- RESULTADOS FINANCIEROS -->
+
+                <div class="financial-results">
+
+                    <div class="financial-card available">
+
+                        <div class="result-icon">
+                            $
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Disponible
+                            </span>
+
+                            <strong>
+                                $ <span id="spnDisponible"></span>
+                            </strong>
+
+                        </div>
+
                     </div>
 
-                    <div class="result-card">
-                        <span class="result-label">Capacidad de pago mensual</span>
-                        <p>
-                            $ <span id="spnCapacidadPago"></span>
-                        </p>
+
+                    <div class="financial-card capacity">
+
+                        <div class="result-icon">
+                            ↗
+                        </div>
+
+                        <div>
+
+                            <span>
+                                Capacidad de pago mensual
+                            </span>
+
+                            <strong>
+                                $ <span id="spnCapacidadPago"></span>
+                            </strong>
+
+                        </div>
+
                     </div>
 
                 </div>
@@ -107,151 +242,327 @@
             </section>
 
 
-            <!-- SOLICITUD DE CRÉDITO -->
-            <section class="credit-section">
+            <!-- =====================================
+                 SOLICITUD DE CRÉDITO
+            ====================================== -->
 
-                <div class="section-title">
-                    <div class="section-number">02</div>
+            <section class="panel-section credit-request">
+
+                <div class="section-heading">
+
+                    <div class="number">
+                        02
+                    </div>
 
                     <div>
-                        <h2>Solicitud de crédito</h2>
-                        <p>Define las características del préstamo.</p>
+
+                        <h2>
+                            Solicitud de crédito
+                        </h2>
+
+                        <p>
+                            Define las características del préstamo.
+                        </p>
+
                     </div>
+
                 </div>
 
-                <div class="form-grid">
+
+                <div class="form-grid three-columns">
+
+
+                    <!-- MONTO -->
 
                     <div class="field">
-                        <label for="txtMonto">Monto solicitado</label>
 
-                        <div class="input-money">
-                            <span>$</span>
+                        <label for="txtMonto">
+                            <span class="label-icon">$</span>
+                            Monto solicitado
+                        </label>
+
+                        <div class="input-container">
+
+                            <div class="input-icon">
+                                $
+                            </div>
+
                             <input
                                 type="text"
                                 id="txtMonto"
                                 placeholder="0.00"
+                                inputmode="decimal"
+                                autocomplete="off"
                             >
+
+                            <span class="input-suffix">
+                                USD
+                            </span>
+
                         </div>
+
                     </div>
 
-                    <div class="field">
-                        <label for="txtPlazo">Plazo en años</label>
 
-                        <div class="input-money">
+                    <!-- PLAZO -->
+
+                    <div class="field">
+
+                        <label for="txtPlazo">
+                            <span class="label-icon">
+                                ◷
+                            </span>
+
+                            Plazo en años
+                        </label>
+
+                        <div class="input-container">
+
+                            <div class="input-icon">
+                                ◷
+                            </div>
+
                             <input
                                 type="text"
                                 id="txtPlazo"
                                 placeholder="Ej. 5"
+                                inputmode="numeric"
+                                autocomplete="off"
                             >
-                            <span class="suffix">años</span>
+
+                            <span class="input-suffix">
+                                años
+                            </span>
+
                         </div>
+
                     </div>
 
-                    <div class="field">
-                        <label for="txtTasaInteres">Tasa de interés</label>
 
-                        <div class="input-money">
+                    <!-- TASA -->
+
+                    <div class="field">
+
+                        <label for="txtTasaInteres">
+
+                            <span class="label-icon">
+                                %
+                            </span>
+
+                            Tasa de interés
+
+                        </label>
+
+                        <div class="input-container">
+
+                            <div class="input-icon">
+                                %
+                            </div>
+
                             <input
                                 type="text"
                                 id="txtTasaInteres"
                                 placeholder="Ej. 10"
+                                inputmode="decimal"
+                                autocomplete="off"
                             >
-                            <span class="suffix">%</span>
+
+                            <span class="input-suffix">
+                                %
+                            </span>
+
                         </div>
+
                     </div>
+
 
                 </div>
 
             </section>
 
 
-            <!-- RESULTADOS -->
-            <section class="summary">
+            <!-- =====================================
+                 RESUMEN DEL CRÉDITO
+            ====================================== -->
 
-                <div class="summary-header">
-                    <div>
-                        <span class="eyebrow">RESULTADO DE SIMULACIÓN</span>
-                        <h2>Resumen del crédito</h2>
+            <section class="summary-section">
+
+                <div class="section-heading">
+
+                    <div class="number">
+                        03
                     </div>
+
+                    <div>
+
+                        <h2>
+                            Resumen del crédito
+                        </h2>
+
+                        <p>
+                            Resultados de tu simulación.
+                        </p>
+
+                    </div>
+
                 </div>
+
 
                 <div class="summary-grid">
 
-                    <div class="summary-item">
-                        <span>Interés a pagar</span>
+
+                    <!-- INTERÉS -->
+
+                    <div class="summary-card blue">
+
+                        <span>
+                            Interés a pagar
+                        </span>
+
                         <strong>
                             $ <span id="spnInteresPagar"></span>
                         </strong>
+
                     </div>
 
-                    <div class="summary-item">
-                        <span>Total préstamo</span>
+
+                    <!-- TOTAL -->
+
+                    <div class="summary-card purple">
+
+                        <span>
+                            Total préstamo
+                        </span>
+
                         <strong>
                             $ <span id="spnTotalPrestamo"></span>
                         </strong>
+
                     </div>
 
-                    <div class="summary-item highlight">
-                        <span>Cuota mensual</span>
+
+                    <!-- CUOTA -->
+
+                    <div class="summary-card gold">
+
+                        <span>
+                            Cuota mensual
+                        </span>
+
                         <strong>
                             $ <span id="spnCuotaMensual"></span>
                         </strong>
+
                     </div>
 
-                    <div class="summary-item status">
-                        <span>Estado de crédito</span>
+
+                    <!-- ESTADO -->
+
+                    <div class="summary-card status">
+
+                        <span>
+                            Estado de crédito
+                        </span>
+
                         <strong>
                             <span id="spnEstadoCredito"></span>
                         </strong>
+
                     </div>
+
 
                 </div>
 
             </section>
 
 
-            <!-- BOTONES -->
+            <!-- =====================================
+                 BOTONES
+            ====================================== -->
+
             <div class="buttons">
 
                 <button
                     type="button"
                     onclick="calcular()"
-                    class="btn-primary"
+                    class="btn-calculate"
                 >
+
+                    <span class="button-icon">
+                        ▣
+                    </span>
+
                     Calcular Crédito
+
                 </button>
+
 
                 <button
                     type="button"
                     id="btnReiniciar"
-                    class="btn-secondary"
+                    class="btn-reset"
                 >
+
+                    <span class="button-icon">
+                        ↻
+                    </span>
+
                     Reiniciar
+
                 </button>
 
             </div>
 
+
+            <!-- AVISO -->
+
             <div class="notice">
-                <span>ⓘ</span>
+
+                <div class="notice-icon">
+                    i
+                </div>
+
                 <p>
                     Los valores mostrados corresponden a una simulación
                     referencial y no representan una oferta financiera real.
                 </p>
+
             </div>
 
+
         </div>
+
     </main>
 
 
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
     <footer>
-        <div>
-            <strong>NovaBank</strong>
-            <span>© 2026 Servicios Financieros</span>
+
+        <div class="footer-brand">
+
+            <strong>
+                TOPFINANCE
+            </strong>
+
+            <span>
+                Servicios Financieros
+            </span>
+
         </div>
 
-        <span>Plataforma de simulación crediticia</span>
+        <span>
+            © 2026 TOPFINANCE | Plataforma de simulación crediticia
+        </span>
+
     </footer>
 
+
+    <!-- =========================================
+         JAVASCRIPT ORIGINAL
+    ========================================== -->
 
     <script src="funciones.js"></script>
     <script src="simulador.js"></script>
