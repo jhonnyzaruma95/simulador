@@ -3,44 +3,256 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Simulador de Crédito</title>
+    <title>NovaBank | Simulador de Crédito</title>
     <link rel="stylesheet" href="simulador.css">
 </head>
+
 <body>
 
-    <div class="container">
-        <h1>Simulador de Crédito</h1>
-
-        <h2>Datos financieros</h2>
-        <label for="txtIngresos">Ingresos:</label>
-        <input type="text" id="txtIngresos">
-
-        <label for="txtEgresos">Egresos:</label>
-        <input type="text" id="txtEgresos">
-
-        <p>Disponible: <span id="spnDisponible"></span></p>
-        <p>Capacidad de pago mensual: <span id="spnCapacidadPago"></span></p>
-
-        <h2>Solicitud de crédito</h2>
-        <label for="txtMonto">Monto:</label>
-        <input type="text" id="txtMonto">
-
-        <label for="txtPlazo">Plazo en años:</label>
-        <input type="text" id="txtPlazo">
-
-        <label for="txtTasaInteres">Tasa de interés:</label>
-        <input type="text" id="txtTasaInteres">
-
-        <p>Interés a pagar: <span id="spnInteresPagar"></span></p>
-        <p>Total préstamo: <span id="spnTotalPrestamo"></span></p>
-        <p>Cuota mensual: <span id="spnCuotaMensual"></span></p>
-        <p>Estado de crédito: <span id="spnEstadoCredito"></span></p>
-
-        <div class="buttons">
-            <button onclick="calcular()">Calcular Crédito</button>
-            <button id="btnReiniciar">Reiniciar</button>
+    <header class="topbar">
+        <div class="brand">
+            <div class="brand-icon">N</div>
+            <div>
+                <strong>NovaBank</strong>
+                <span>Servicios Financieros</span>
+            </div>
         </div>
-    </div>
+
+        <div class="secure">
+            <span class="secure-dot"></span>
+            Simulador seguro
+        </div>
+    </header>
+
+    <main class="page">
+
+        <section class="hero">
+            <div>
+                <span class="eyebrow">CENTRO FINANCIERO</span>
+                <h1>Simulador de Crédito</h1>
+                <p>
+                    Calcula tu capacidad financiera y consulta las condiciones
+                    estimadas de tu crédito.
+                </p>
+            </div>
+
+            <div class="hero-card">
+                <span>ESTADO DEL SERVICIO</span>
+                <strong>Disponible</strong>
+                <small>Simulación en línea</small>
+            </div>
+        </section>
+
+        <div class="container">
+
+            <!-- DATOS FINANCIEROS -->
+            <section class="financial-section">
+
+                <div class="section-title">
+                    <div class="section-number">01</div>
+                    <div>
+                        <h2>Datos financieros</h2>
+                        <p>Ingresa tu información económica mensual.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="txtIngresos">Ingresos mensuales</label>
+
+                        <div class="input-money">
+                            <span>$</span>
+                            <input
+                                type="text"
+                                id="txtIngresos"
+                                placeholder="0.00"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="txtEgresos">Egresos mensuales</label>
+
+                        <div class="input-money">
+                            <span>$</span>
+                            <input
+                                type="text"
+                                id="txtEgresos"
+                                placeholder="0.00"
+                            >
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="results-grid">
+
+                    <div class="result-card">
+                        <span class="result-label">Disponible</span>
+                        <p>
+                            $ <span id="spnDisponible"></span>
+                        </p>
+                    </div>
+
+                    <div class="result-card">
+                        <span class="result-label">Capacidad de pago mensual</span>
+                        <p>
+                            $ <span id="spnCapacidadPago"></span>
+                        </p>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- SOLICITUD DE CRÉDITO -->
+            <section class="credit-section">
+
+                <div class="section-title">
+                    <div class="section-number">02</div>
+
+                    <div>
+                        <h2>Solicitud de crédito</h2>
+                        <p>Define las características del préstamo.</p>
+                    </div>
+                </div>
+
+                <div class="form-grid">
+
+                    <div class="field">
+                        <label for="txtMonto">Monto solicitado</label>
+
+                        <div class="input-money">
+                            <span>$</span>
+                            <input
+                                type="text"
+                                id="txtMonto"
+                                placeholder="0.00"
+                            >
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="txtPlazo">Plazo en años</label>
+
+                        <div class="input-money">
+                            <input
+                                type="text"
+                                id="txtPlazo"
+                                placeholder="Ej. 5"
+                            >
+                            <span class="suffix">años</span>
+                        </div>
+                    </div>
+
+                    <div class="field">
+                        <label for="txtTasaInteres">Tasa de interés</label>
+
+                        <div class="input-money">
+                            <input
+                                type="text"
+                                id="txtTasaInteres"
+                                placeholder="Ej. 10"
+                            >
+                            <span class="suffix">%</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- RESULTADOS -->
+            <section class="summary">
+
+                <div class="summary-header">
+                    <div>
+                        <span class="eyebrow">RESULTADO DE SIMULACIÓN</span>
+                        <h2>Resumen del crédito</h2>
+                    </div>
+                </div>
+
+                <div class="summary-grid">
+
+                    <div class="summary-item">
+                        <span>Interés a pagar</span>
+                        <strong>
+                            $ <span id="spnInteresPagar"></span>
+                        </strong>
+                    </div>
+
+                    <div class="summary-item">
+                        <span>Total préstamo</span>
+                        <strong>
+                            $ <span id="spnTotalPrestamo"></span>
+                        </strong>
+                    </div>
+
+                    <div class="summary-item highlight">
+                        <span>Cuota mensual</span>
+                        <strong>
+                            $ <span id="spnCuotaMensual"></span>
+                        </strong>
+                    </div>
+
+                    <div class="summary-item status">
+                        <span>Estado de crédito</span>
+                        <strong>
+                            <span id="spnEstadoCredito"></span>
+                        </strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- BOTONES -->
+            <div class="buttons">
+
+                <button
+                    type="button"
+                    onclick="calcular()"
+                    class="btn-primary"
+                >
+                    Calcular Crédito
+                </button>
+
+                <button
+                    type="button"
+                    id="btnReiniciar"
+                    class="btn-secondary"
+                >
+                    Reiniciar
+                </button>
+
+            </div>
+
+            <div class="notice">
+                <span>ⓘ</span>
+                <p>
+                    Los valores mostrados corresponden a una simulación
+                    referencial y no representan una oferta financiera real.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+
+    <footer>
+        <div>
+            <strong>NovaBank</strong>
+            <span>© 2026 Servicios Financieros</span>
+        </div>
+
+        <span>Plataforma de simulación crediticia</span>
+    </footer>
+
+
     <script src="funciones.js"></script>
     <script src="simulador.js"></script>
 

@@ -1,70 +1,919 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f6f8;
-    margin: 0;
-    padding: 0;
-}
+/* =========================================
+   NOVABANK
+   SIMULADOR DE CRÉDITO
+   Diseño responsive empresarial
+========================================= */
 
-.container {
-    width: 400px;
-    margin: 40px auto;
-    padding: 20px;
-    background-color: white;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-h1 {
-    text-align: center;
-    margin-bottom: 20px;
-}
-
-h2 {
-    margin-top: 20px;
-    font-size: 18px;
-}
-
-label {
-    display: block;
-    margin-top: 10px;
-    font-weight: bold;
-}
-
-input {
-    width: 100%;
-    padding: 8px;
-    margin-top: 5px;
-    border-radius: 5px;
-    border: 1px solid #ccc;
+* {
     box-sizing: border-box;
 }
 
-p {
-    margin-top: 10px;
+:root {
+    --primary: #0b3b75;
+    --primary-dark: #072b55;
+    --primary-light: #1468c4;
+
+    --green: #0b9b6b;
+    --green-light: #e8f8f2;
+
+    --background: #f3f6fa;
+    --white: #ffffff;
+
+    --text: #172b4d;
+    --text-light: #64748b;
+
+    --border: #dce4ed;
+
+    --shadow:
+        0 10px 30px rgba(15, 35, 65, 0.08);
 }
 
-span {
-    font-weight: bold;
-    color: #2c3e50;
+
+/* =========================================
+   BODY
+========================================= */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+
+    font-family:
+        Arial,
+        Helvetica,
+        sans-serif;
+
+    background: var(--background);
+    color: var(--text);
 }
+
+
+/* =========================================
+   BARRA SUPERIOR
+========================================= */
+
+.topbar {
+    width: 100%;
+
+    min-height: 72px;
+
+    background: var(--white);
+
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 12px 6%;
+
+    gap: 20px;
+}
+
+
+/* LOGO */
+
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.brand-icon {
+    width: 42px;
+    height: 42px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 10px;
+
+    background: var(--primary);
+
+    color: white;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    box-shadow:
+        0 5px 12px rgba(11, 59, 117, 0.25);
+}
+
+.brand strong {
+    display: block;
+
+    font-size: 18px;
+    color: var(--primary);
+}
+
+.brand span {
+    display: block;
+
+    margin-top: 2px;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+    font-weight: normal;
+}
+
+
+/* SEGURIDAD */
+
+.secure {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+.secure-dot {
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: var(--green);
+
+    box-shadow:
+        0 0 0 4px rgba(11, 155, 107, 0.1);
+}
+
+
+/* =========================================
+   CONTENEDOR PRINCIPAL
+========================================= */
+
+.page {
+    width: 100%;
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+    padding: 45px 20px 60px;
+}
+
+
+/* =========================================
+   HERO
+========================================= */
+
+.hero {
+    display: flex;
+
+    justify-content: space-between;
+    align-items: center;
+
+    gap: 30px;
+
+    margin-bottom: 30px;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    margin-bottom: 8px;
+
+    color: var(--primary-light);
+
+    font-size: 11px;
+    font-weight: bold;
+
+    letter-spacing: 1.5px;
+}
+
+.hero h1 {
+    margin: 0;
+
+    color: var(--primary-dark);
+
+    font-size: clamp(28px, 5vw, 40px);
+
+    line-height: 1.15;
+}
+
+.hero p {
+    max-width: 650px;
+
+    margin: 12px 0 0;
+
+    color: var(--text-light);
+
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+
+/* TARJETA DEL HERO */
+
+.hero-card {
+    min-width: 190px;
+
+    padding: 18px;
+
+    border-radius: 12px;
+
+    background: var(--primary);
+
+    color: white;
+
+    box-shadow:
+        0 10px 25px rgba(11, 59, 117, 0.2);
+}
+
+.hero-card span {
+    display: block;
+
+    margin-bottom: 7px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    color: #bcd5f2;
+}
+
+.hero-card strong {
+    display: block;
+
+    font-size: 17px;
+}
+
+.hero-card small {
+    display: block;
+
+    margin-top: 4px;
+
+    color: #cbdcf1;
+
+    font-size: 11px;
+}
+
+
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.container {
+    width: 100%;
+
+    background: var(--white);
+
+    border: 1px solid var(--border);
+
+    border-radius: 16px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+
+/* =========================================
+   SECCIONES
+========================================= */
+
+.financial-section,
+.credit-section {
+    padding: 30px;
+}
+
+.credit-section {
+    border-top: 1px solid var(--border);
+}
+
+
+/* TITULO DE SECCION */
+
+.section-title {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 14px;
+
+    margin-bottom: 25px;
+}
+
+.section-number {
+    flex-shrink: 0;
+
+    width: 34px;
+    height: 34px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #eaf2fb;
+
+    color: var(--primary);
+
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.section-title h2 {
+    margin: 0;
+
+    color: var(--primary-dark);
+
+    font-size: 19px;
+}
+
+.section-title p {
+    margin: 5px 0 0;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   FORMULARIOS
+========================================= */
+
+.form-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 20px;
+}
+
+.field {
+    min-width: 0;
+}
+
+.field label {
+    display: block;
+
+    margin-bottom: 7px;
+
+    color: var(--text);
+
+    font-size: 13px;
+    font-weight: bold;
+}
+
+
+/* INPUT */
+
+.input-money {
+    width: 100%;
+
+    min-height: 46px;
+
+    display: flex;
+    align-items: center;
+
+    overflow: hidden;
+
+    background: #fbfcfe;
+
+    border: 1px solid var(--border);
+
+    border-radius: 8px;
+
+    transition:
+        border-color 0.2s,
+        box-shadow 0.2s;
+}
+
+.input-money:focus-within {
+    border-color: var(--primary-light);
+
+    box-shadow:
+        0 0 0 3px rgba(20, 104, 196, 0.1);
+
+    background: white;
+}
+
+.input-money > span:first-child {
+    padding-left: 14px;
+
+    color: var(--text-light);
+
+    font-size: 14px;
+}
+
+.input-money input {
+    width: 100%;
+
+    min-width: 0;
+
+    height: 44px;
+
+    padding: 0 12px;
+
+    border: none;
+
+    outline: none;
+
+    background: transparent;
+
+    color: var(--text);
+
+    font-size: 14px;
+}
+
+.input-money input::placeholder {
+    color: #a4afbd;
+}
+
+.input-money .suffix {
+    padding-right: 14px;
+
+    color: var(--text-light);
+
+    font-size: 13px;
+}
+
+
+/* =========================================
+   RESULTADOS FINANCIEROS
+========================================= */
+
+.results-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
+    gap: 15px;
+
+    margin-top: 25px;
+}
+
+.result-card {
+    padding: 18px;
+
+    border: 1px solid #dcefe8;
+
+    border-radius: 10px;
+
+    background: var(--green-light);
+}
+
+.result-label {
+    display: block;
+
+    color: #51766a;
+
+    font-size: 12px;
+}
+
+.result-card p {
+    margin: 8px 0 0;
+
+    color: var(--green);
+
+    font-size: 22px;
+    font-weight: bold;
+}
+
+
+/* =========================================
+   RESUMEN
+========================================= */
+
+.summary {
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f7faff 0%,
+            #ffffff 100%
+        );
+
+    border-top: 1px solid var(--border);
+}
+
+.summary-header h2 {
+    margin: 0;
+
+    color: var(--primary-dark);
+
+    font-size: 20px;
+}
+
+.summary-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, minmax(0, 1fr));
+
+    gap: 12px;
+
+    margin-top: 20px;
+}
+
+.summary-item {
+    min-width: 0;
+
+    padding: 17px;
+
+    border: 1px solid var(--border);
+
+    border-radius: 9px;
+
+    background: white;
+}
+
+.summary-item > span:first-child {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    line-height: 1.4;
+}
+
+.summary-item strong {
+    display: block;
+
+    color: var(--primary);
+
+    font-size: 17px;
+
+    word-break: break-word;
+}
+
+
+/* CUOTA */
+
+.summary-item.highlight {
+    background: var(--primary);
+
+    border-color: var(--primary);
+}
+
+.summary-item.highlight > span:first-child {
+    color: #bfd3eb;
+}
+
+.summary-item.highlight strong {
+    color: white;
+}
+
+
+/* ESTADO */
+
+.summary-item.status strong {
+    color: var(--green);
+}
+
+
+/* =========================================
+   BOTONES
+========================================= */
 
 .buttons {
-    margin-top: 20px;
     display: flex;
-    justify-content: space-between;
+
+    gap: 12px;
+
+    padding: 25px 30px 15px;
 }
 
 button {
-    width: 48%;
-    padding: 10px;
+    min-height: 46px;
+
     border: none;
-    border-radius: 5px;
-    background-color: #3498db;
-    color: white;
+
+    border-radius: 8px;
+
+    padding: 0 22px;
+
+    font-size: 13px;
     font-weight: bold;
+
     cursor: pointer;
+
+    transition:
+        transform 0.2s,
+        box-shadow 0.2s,
+        background 0.2s;
 }
 
 button:hover {
-    background-color: #2980b9;
+    transform: translateY(-1px);
+}
+
+
+/* PRINCIPAL */
+
+.btn-primary {
+    flex: 1;
+
+    background: var(--primary);
+
+    color: white;
+
+    box-shadow:
+        0 6px 14px rgba(11, 59, 117, 0.2);
+}
+
+.btn-primary:hover {
+    background: var(--primary-light);
+}
+
+
+/* SECUNDARIO */
+
+.btn-secondary {
+    width: 180px;
+
+    background: #eef2f6;
+
+    color: var(--text);
+}
+
+.btn-secondary:hover {
+    background: #e1e7ee;
+}
+
+
+/* =========================================
+   AVISO
+========================================= */
+
+.notice {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 10px;
+
+    margin: 10px 30px 30px;
+
+    padding: 13px 15px;
+
+    border-radius: 8px;
+
+    background: #f5f7fa;
+}
+
+.notice > span {
+    color: var(--primary-light);
+
+    font-size: 15px;
+}
+
+.notice p {
+    margin: 0;
+
+    color: var(--text-light);
+
+    font-size: 11px;
+
+    line-height: 1.5;
+}
+
+
+/* =========================================
+   FOOTER
+========================================= */
+
+footer {
+    min-height: 70px;
+
+    padding: 20px 6%;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: var(--primary-dark);
+
+    color: #b7c8dc;
+
+    font-size: 11px;
+}
+
+footer div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+footer strong {
+    color: white;
+
+    font-size: 14px;
+}
+
+footer span {
+    color: #9db1c8;
+}
+
+
+/* =========================================
+   TABLETS
+========================================= */
+
+@media (max-width: 850px) {
+
+    .page {
+        padding: 35px 18px 50px;
+    }
+
+    .hero {
+        align-items: flex-start;
+    }
+
+    .hero-card {
+        min-width: 170px;
+    }
+
+    .summary-grid {
+        grid-template-columns:
+            repeat(2, minmax(0, 1fr));
+    }
+
+}
+
+
+/* =========================================
+   CELULARES
+========================================= */
+
+@media (max-width: 600px) {
+
+    .topbar {
+        padding: 12px 16px;
+    }
+
+    .secure {
+        font-size: 11px;
+    }
+
+    .brand-icon {
+        width: 38px;
+        height: 38px;
+    }
+
+    .brand strong {
+        font-size: 16px;
+    }
+
+    .brand span {
+        font-size: 9px;
+    }
+
+
+    .page {
+        padding: 25px 12px 40px;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        flex-direction: column;
+
+        gap: 18px;
+
+        margin-bottom: 22px;
+    }
+
+    .hero h1 {
+        font-size: 29px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .hero-card {
+        width: 100%;
+    }
+
+
+    /* CONTENEDOR */
+
+    .financial-section,
+    .credit-section,
+    .summary {
+        padding: 22px 18px;
+    }
+
+
+    /* FORMULARIO */
+
+    .form-grid {
+        grid-template-columns: 1fr;
+
+        gap: 16px;
+    }
+
+
+    /* RESULTADOS */
+
+    .results-grid {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    /* RESUMEN */
+
+    .summary-grid {
+        grid-template-columns: 1fr;
+
+        gap: 10px;
+    }
+
+
+    /* BOTONES */
+
+    .buttons {
+        flex-direction: column;
+
+        padding: 20px 18px 10px;
+    }
+
+    .btn-secondary {
+        width: 100%;
+    }
+
+
+    /* AVISO */
+
+    .notice {
+        margin: 10px 18px 22px;
+    }
+
+
+    /* FOOTER */
+
+    footer {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        padding: 20px 16px;
+
+        gap: 8px;
+    }
+
+    footer div {
+        flex-direction: column;
+
+        align-items: flex-start;
+
+        gap: 3px;
+    }
+
+}
+
+
+/* =========================================
+   CELULARES MUY PEQUEÑOS
+========================================= */
+
+@media (max-width: 380px) {
+
+    .secure {
+        display: none;
+    }
+
+    .hero h1 {
+        font-size: 26px;
+    }
+
+    .section-title h2 {
+        font-size: 17px;
+    }
+
+    .financial-section,
+    .credit-section,
+    .summary {
+        padding: 20px 15px;
+    }
+
+    .buttons {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    .notice {
+        margin-left: 15px;
+        margin-right: 15px;
+    }
+
 }
